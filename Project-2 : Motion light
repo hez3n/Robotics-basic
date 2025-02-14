@@ -1,0 +1,25 @@
+// C++ code
+//Sim link: https://www.tinkercad.com/things/6hTbUq8z0Hw-fantabulous-gogo-inari?sharecode=3Jjj-wWNdrJsOHye_ebvBW4cO4UywvaaYJjAXUoV2iA
+
+int relay=4,pir=7;
+void setup()
+{ Serial.begin(9600);
+  pinMode(pir,INPUT);
+  pinMode(relay,OUTPUT);
+
+
+}
+
+void loop()
+{
+  if(digitalRead(pir)==HIGH){
+           
+      Serial.println("Motion detected");
+      digitalWrite(relay,HIGH);
+ }
+  else {
+      Serial.println("No motion detected");
+      digitalWrite(relay,LOW);           
+
+  }
+}
